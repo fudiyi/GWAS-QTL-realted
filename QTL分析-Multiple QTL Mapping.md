@@ -10,6 +10,18 @@
 # R 
 # FDY-2020-3-24
 
+# qtl_data.csv 文件格式
+
+pheno   m1	m2	m3	m4                     # marker
+	1	1	1	1                      # chr
+	0	3.55	3.55	7.07		       # cM
+76.38	BB	BB	BB	BB
+0	AA	AA	AA	AA
+100	BB	BB	BB	BB
+-	BB	BB	BB	AA
+33.27	AA	AA	AA	AA
+65.8	AA	AA	AA	AA
+
 > setwd("E:/QTL/fdy")
 > library(qtl)
 > geno = read.cross("csv",  file="qtl_data.csv",na.strings = "-",genotypes = c("AA", "AB","BB"), alleles = c("A", "B"), estimate.map = FALSE, BC.gen=2, F.gen=3) #读取基因型文件，群体为BC2F3，若子代基因型与亲本一致则修改基因型为“AA/BB”（male:AA;female:BB），若为杂合则修改为“AB”，若为测到则修改为“-”
