@@ -151,9 +151,11 @@ write.table(summary(out.mqm)[[3]], file= paste(pheno.col,"_mqm_effect.txt",sep="
 
 ######### Here is QTL scanning results with other QTL fixed as background #########
 names(attributes(qtl))                                                                       
-lodprof <- attr(qtl, "lodprofile")  # results saved in the component lodprofile                                                                                    
-lodprof[[1]] # first QTL scanning results                                                                                                           
-lodint(qtl, qtl.index=1)  ##### support interval for the first QTL                                                                                                                  ######## output scanning results for each QTL, saved in lodprof.txt #######
+lodprof <- attr(qtl, "lodprofile")  # results saved in the component lodprofile                         
+lodprof[[1]] # first QTL scanning results         
+lodint(qtl, qtl.index=1)  ##### support interval for the first QTL
+
+######## output scanning results for each QTL, saved in lodprof.txt #######
 out.lodprof<-capture.output(lodprof)
 cat(out.lodprof,file=paste(pheno.col,"_mqm_lodprof.txt",sep=""),sep="\n",append=TRUE)
 
